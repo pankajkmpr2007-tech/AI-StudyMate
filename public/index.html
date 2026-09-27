@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyMate — AI Learning Companion</title>
+  <meta name="description" content="StudyMate is an AI-powered learning companion for explanations, notes, quizzes and study plans." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <div>
+        <div class="brand-name">StudyMate</div>
+        <div class="brand-sub">AI Learning Companion</div>
+      </div>
+    </div>
+    <div class="badge">AI + Education</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">LEARN • PRACTICE • IMPROVE</span>
+        <h1>Study smarter with your<br><span>AI learning companion.</span></h1>
+        <p>Understand difficult topics, make revision notes, test yourself, and build a study plan — all in one place.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-orb">✦</div>
+        <strong>Personalized learning</strong>
+        <span>Simple explanations based on your level.</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <h3>What do you want to do?</h3>
+
+        <button class="mode active" data-mode="explain">
+          <span class="mode-icon">💡</span>
+          <span><b>Explain Topic</b><small>Learn step-by-step</small></span>
+        </button>
+
+        <button class="mode" data-mode="notes">
+          <span class="mode-icon">📝</span>
+          <span><b>Make Notes</b><small>Exam-friendly revision</small></span>
+        </button>
+
+        <button class="mode" data-mode="quiz">
+          <span class="mode-icon">🎯</span>
+          <span><b>Take Quiz</b><small>Test your understanding</small></span>
+        </button>
+
+        <button class="mode" data-mode="study-plan">
+          <span class="mode-icon">📅</span>
+          <span><b>Study Plan</b><small>Plan your next 7 days</small></span>
+        </button>
+
+        <div class="progress-card">
+          <div class="progress-title">Your progress</div>
+          <div class="progress-row"><span>Topics explored</span><b id="topicsCount">0</b></div>
+          <div class="progress-row"><span>Quizzes completed</span><b id="quizCount">0</b></div>
+          <div class="progress-row"><span>Best quiz score</span><b id="bestScore">—</b></div>
+        </div>
+      </aside>
+
+      <section class="main-panel">
+        <div class="panel-head">
+          <div>
+            <span class="eyebrow" id="modeLabel">AI TUTOR</span>
+            <h2 id="panelTitle">What are you learning today?</h2>
+          </div>
+          <div class="level-wrap">
+            <label for="level">Level</label>
+            <select id="level">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <form id="studyForm" class="study-form">
+          <label for="topic">Enter a topic</label>
+          <div class="input-row">
+            <input id="topic" type="text" placeholder="e.g. Binary Search Tree" maxlength="300" required />
+            <button id="submitBtn" type="submit"><span id="buttonText">Explain with AI</span> <span>→</span></button>
+          </div>
+          <div class="suggestions">
+            <button type="button" class="suggestion">Photosynthesis</button>
+            <button type="button" class="suggestion">Binary Search Tree</button>
+            <button type="button" class="suggestion">Newton's Laws</button>
+            <button type="button" class="suggestion">Pointers in C++</button>
+          </div>
+        </form>
+
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <div>
+            <b>StudyMate is thinking…</b>
+            <span>Creating a student-friendly response.</span>
+          </div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <article id="result" class="result hidden"></article>
+
+        <section id="quizArea" class="quiz-area hidden">
+          <div class="quiz-top">
+            <div>
+              <span class="eyebrow">KNOWLEDGE CHECK</span>
+              <h2 id="quizTitle">Quiz</h2>
+            </div>
+            <div class="quiz-score" id="quizLiveScore">0 / 0</div>
+          </div>
+          <div id="questionArea"></div>
+          <button id="nextBtn" class="next-btn hidden">Next Question →</button>
+        </section>
+
+        <section class="feature-strip">
+          <div><span>⚡</span><b>Fast</b><small>Get help in seconds</small></div>
+          <div><span>🎓</span><b>Student-first</b><small>Simple learning language</small></div>
+          <div><span>🔒</span><b>Private key</b><small>API key stays on server</small></div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>StudyMate MVP • Built for “AI with Education”</span>
+    <span>Learning is a journey, not a race.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
